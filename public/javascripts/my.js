@@ -14,10 +14,12 @@ $(function() {
         dayClick: function(date, jsEvent, calEvent) {
           //alert(date.format("DD-MM-YYYY") + ' ausgewählt');
           $('#exampleModal').modal('show');
-          console.log('funzt');
         },
         select: function(startDate, endDate) {
           //alert('Vom ' + startDate.format("DD-MM-YYYY") + ' bis zum ' + endDate.subtract(1, "days").format("DD-MM-YYYY") + ' ausgewählt.');
+          $('#datumvon').val(startDate.format("DD-MM-YYYY"));
+          $('#datumbis').val(endDate.subtract(1, "days").format("DD-MM-YYYY"));
+          $('#exampleModal').modal('show');
           console.log('funzt2');
         },
         //Funktion [vorhandes event info return mittels alert]
@@ -25,7 +27,7 @@ $(function() {
           events: [
             {
               title: 'First event',
-              start: '2018-05-04',
+              start: '',
             }
           ],
           eventClick: function(eventObj) {
