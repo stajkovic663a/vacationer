@@ -14,14 +14,62 @@
   <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="/">Vacationer</a>
     <a class="navbar-brand" href="/login">Login</a>
+    <a class="navbar-brand" href="/overview">Übersicht</a>
   </nav> <br>
   <!-- Calendar -->
   <div id="calendar"></div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header"><!-- Info -->
+          <h5 class="modal-title" id="exampleModalLabel">Bitte Informationen eintragen</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="" method="post" role="form" class="contactForm">
+            <div class="form-group"> <!-- von (datum) -->
+              <input type="text" name="datumvon" class="form-control" id="datumvon" readonly placeholder="Von" data-rule="minlen:4" data-msg="Please enter at least 4 chars"/>
+              <div class="validation"></div>
+            </div>
+            <div class="form-group"><!-- bis (datum) -->
+              <input type="email" name="datumbis" class="form-control" id="datumbis" readonly placeholder="Bis" data-rule="email" data-msg="Please enter a valid email"/>
+              <div class="validation"></div>
+            </div>
+            <div class="form-group"><!-- mitarbeiter -->
+              <label for="sel1">Mitarbeiter</label>
+              <select class="form-control" id="ort">
+                <option>Antonic</option>
+                <option>Panic</option>
+                <option>Spahic</option>
+                <option>Stajkovic</option>
+              </select>
+            </div>
+            <div class="form-group"><!-- messagebox -->
+              <textarea class="form-control" name="message" rows="5" id="msg" data-rule="required" data-msg="Please write something for us"
+                placeholder="Message">Urlaub</textarea>
+              <div class="validation"></div>
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer"><!--footer-->
+          <button type="button" id="btnAdd" class="btn btn-success" data-dismiss="modal">&Auml;nderung speichern</button>
+          <button type="button" id="btnDel" class="btn btn-danger" data-dismiss="modal">Eintrag löschen</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Schließen</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="/javascripts/jquery/dist/jquery.min.js"></script>
   <script src="/javascripts/jquery-ui/jquery-ui.min.js"></script>
   <script src="/javascripts/moment/min/moment.min.js"></script>
   <script src="/fullcalendar/dist/fullcalendar.js"></script>
+  <script src="/stylesheets/bootstrap/js/dist/modal.js"></script>
+  <script src="/stylesheets/bootstrap/js/dist/util.js"></script>
   <script src="/javascripts/my.js"></script>
 </body>
 </html>

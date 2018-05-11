@@ -1,3 +1,5 @@
+//andreas
+
 $(function() {
     $('#calendar').fullCalendar({
         //Design [hoehe]
@@ -9,11 +11,14 @@ $(function() {
           center: 'title',
           right: 'month,agendaWeek,agendaDay'
         },
-        dayClick: function(date) {
-          alert(date.format("DD-MM-YYYY") + ' ausgewählt.');
+        dayClick: function(date, jsEvent, calEvent) {
+          //alert(date.format("DD-MM-YYYY") + ' ausgewählt');
+          $('#exampleModal').modal('show');
+          console.log('funzt');
         },
         select: function(startDate, endDate) {
-          alert('Vom ' + startDate.format("DD-MM-YYYY") + ' bis zum ' + endDate.subtract(1, "days").format("DD-MM-YYYY") + ' ausgewählt.');
+          //alert('Vom ' + startDate.format("DD-MM-YYYY") + ' bis zum ' + endDate.subtract(1, "days").format("DD-MM-YYYY") + ' ausgewählt.');
+          console.log('funzt2');
         },
         //Funktion [vorhandes event info return mittels alert]
           defaultDate: $.datepicker.formatDate('yy/mm/dd', new Date()),
@@ -24,7 +29,8 @@ $(function() {
             }
           ],
           eventClick: function(eventObj) {
-            alert(eventObj.title);
+            //alert(eventObj.title + ' am ' + eventObj.start.format("DD-MM-YYYY"));
+            console.log('funzt3');
         }
         //
     });
