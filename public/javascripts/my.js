@@ -1,5 +1,8 @@
 $(function() {
     $('#calendar').fullCalendar({
+
+        //standardkalendaransicht
+        defaultView: 'month',
         //Design [hoehe]
         height: 575,
         //Funktion [bereich oder tag (von - bis) auswaehlen]
@@ -10,7 +13,6 @@ $(function() {
           right: 'month,agendaWeek,agendaDay'
         },
         select: function(startDate, endDate) {
-          //alert('Vom ' + startDate.format("DD-MM-YYYY") + ' bis zum ' + endDate.subtract(1, "days").format("DD-MM-YYYY") + ' ausgewählt.');
           $('#datumvon').val(startDate.format("DD-MM-YYYY"));
           $('#datumbis').val(endDate.subtract(1, "days").format("DD-MM-YYYY"));
           $('#exampleModal').modal('show');
@@ -24,7 +26,6 @@ $(function() {
             }
           ],
           eventClick: function(eventObj) {
-            //alert(eventObj.title + ' am ' + eventObj.start.format("DD-MM-YYYY"));
             console.log('funzt3');
         }
         //
