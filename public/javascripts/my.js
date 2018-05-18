@@ -4,7 +4,7 @@ $(function() {
         defaultView: 'month',
         //aktueller tag
         defaultDate: $.datepicker.formatDate('yy/mm/dd', new Date()),
-        //Design [hoehe]
+        //Design [hoehe] //
         height: 575,
         //Funktion [bereich oder tag (von - bis) auswaehlen]
         selectable: true,
