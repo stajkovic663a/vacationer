@@ -23,16 +23,18 @@ $(function() {
             {
               title: 'Urlaub',
               start: '2018-05-01',
-              end: '2018-05-06',
+              end: '2018-05-05',
               employee: 'Spahic'
             }
           ],
           eventClick: function(eventObj) {
             alert(eventObj.employee + " hat vom " + eventObj.start.format("DD-MM-YYYY") + " bis zum " + eventObj.end.format("DD-MM-YYYY") + " " + eventObj.title + ".");
-        }
+          }
     });
 });
 
-$('#btnAdd').click(function(){
-
+$('#btnAdd').click(function(eventObj){
+  eventObj.title = $('#msg').val();
+  eventObj.start = $('#datumvon').val();
+  eventObj.end = $('#datumbis').val();
 });

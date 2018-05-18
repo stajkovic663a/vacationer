@@ -12,6 +12,10 @@ router.get('/login', function(req, res){
 
 router.get('/overview', function(req, res){
   res.render('overview');
-})
+});
+
+router.get('/admin', function(req, res){
+  res.render('admin');
+});
 
 module.exports = router;
