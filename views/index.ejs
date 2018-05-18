@@ -18,7 +18,7 @@
   </nav> <br>
   <!-- Calendar -->
   <div id="calendar"></div>
-
+  <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -31,20 +31,20 @@
         <div class="modal-body">
           <form action="" method="post" role="form" class="contactForm">
             <div class="form-group"> <!-- von (datum) -->
-              <input type="text" name="datumvon" class="form-control" id="datumvon" readonly placeholder="Von" data-rule="minlen:4" data-msg="Please enter at least 4 chars"/>
+              <input type="text" name="datumvon" class="form-control" id="datumvon" readonly placeholder="Von"/>
               <div class="validation"></div>
             </div>
             <div class="form-group"><!-- bis (datum) -->
-              <input type="email" name="datumbis" class="form-control" id="datumbis" readonly placeholder="Bis" data-rule="email" data-msg="Please enter a valid email"/>
+              <input type="text" name="datumbis" class="form-control" id="datumbis" readonly placeholder="Bis"/>
               <div class="validation"></div>
             </div>
             <div class="form-group"><!-- mitarbeiter -->
               <label for="sel1">Mitarbeiter</label>
-              <select class="form-control" id="ort">
-                <option>Antonic</option>
-                <option>Panic</option>
-                <option>Spahic</option>
-                <option>Stajkovic</option>
+              <select class="form-control" id="selectmitarbeiter">
+                <option value="Antonic">Antonic</option>
+                <option value="Panic">Panic</option>
+                <option value="Spahic">Spahic</option>
+                <option value="Stajkovic">Stajkovic</option>
               </select>
             </div>
             <div class="form-group"><!-- messagebox -->
