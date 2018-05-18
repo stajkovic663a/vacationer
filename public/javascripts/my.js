@@ -21,20 +21,25 @@ $(function() {
         //Funktion [vorhandes event info return]
           events: [
             {
-              title: 'Urlaub',
+              title: 'Urlaub 1.',
               start: '2018-05-01',
               end: '2018-05-05',
               employee: 'Spahic'
             }
           ],
           eventClick: function(eventObj) {
-            alert(eventObj.employee + " hat vom " + eventObj.start.format("DD-MM-YYYY") + " bis zum " + eventObj.end.format("DD-MM-YYYY") + " " + eventObj.title + ".");
+            //alert(eventObj.employee + " hat vom " + eventObj.start.format("DD-MM-YYYY") + " bis zum " + eventObj.end.format("DD-MM-YYYY") + " " + eventObj.title + ".");
+            $('#datumvon').val(eventObj.start.format("DD-MM-YYYY"));
+            $('#datumbis').val(eventObj.end.subtract(1, "days").format("DD-MM-YYYY"));
+            $('#msg').val(eventObj.title);
+            $('#selectmitarbeiter').val(eventObj.employee);
+            $('#exampleModal').modal('show');
           }
     });
 });
 
 $('#btnAdd').click(function(eventObj){
-  eventObj.title = $('#msg').val();
-  eventObj.start = $('#datumvon').val();
-  eventObj.end = $('#datumbis').val();
+  eventObj.title.val($('#msg'));
+  eventObj.start.val($('#datumvon'));
+  eventObj.end.val($('#datumbis'));
 });
