@@ -21,20 +21,17 @@ $(function() {
         //Funktion [vorhandes event info return]
           events: [
             {
-              title: '',
-              start: '',
-              end: '',
-              employee: ''
+              title: 'Urlaub',
+              start: '2018-05-01',
+              end: '2018-05-05',
+              employee: 'Spahic'
             }
           ],
           eventClick: function(eventObj) {
-            title: $('#msg').val();
-            start: $('#datumvon').val();
-            end: $('#datumbis').val();
+            alert(title + start + end + employee);
         }
     });
 });
 
 $('#btnAdd').click(function(){
-  
 });
