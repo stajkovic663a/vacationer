@@ -16,7 +16,7 @@ $(function() {
         select: function(startDate, endDate) {
           $('#datumvon').val(startDate.format("DD-MM-YYYY"));
           $('#datumbis').val(endDate.subtract(1, "days").format("DD-MM-YYYY"));
-          $('#exampleModal').modal('show');
+          $('#calModal').modal('show');
         },
         //Funktion [vorhandes event info return]
           events: [
@@ -33,13 +33,13 @@ $(function() {
             $('#datumbis').val(eventObj.end.subtract(1, "days").format("DD-MM-YYYY"));
             $('#msg').val(eventObj.title);
             $('#selectmitarbeiter').val(eventObj.employee);
-            $('#exampleModal').modal('show');
+            $('#calModal').modal('show');
           }
     });
 });
 
-$('#btnAdd').click(function(eventObj){
+/*$('#btnAdd').click(function(eventObj){
   eventObj.title.val($('#msg'));
   eventObj.start.val($('#datumvon'));
   eventObj.end.val($('#datumbis'));
-});
+});*/
