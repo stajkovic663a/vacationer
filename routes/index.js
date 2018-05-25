@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var data = require('../model/people-postgresql');
 
 //login
 router.get('/', function(req, res) {
@@ -18,8 +19,10 @@ router.get('/admin', function(req, res){
   res.render('admin');
 });
 //calendar admin
-router.get('/adminindex', function(req, res){
-  res.render('adminindex');
+router.get('/adminindex', async function(req, res){
+  res.render('adminindex',{
+    data: await data.getAll()
+  });
 });
 
 module.exports = router;

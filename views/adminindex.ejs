@@ -42,10 +42,9 @@
             <div class="form-group"><!-- mitarbeiter -->
               <label for="sel1">Mitarbeiter</label>
               <select class="form-control" id="selectmitarbeiter">
-                <option value="Antonic">Antonic</option>
-                <option value="Panic">Panic</option>
-                <option value="Spahic">Spahic</option>
-                <option value="Stajkovic">Stajkovic</option>
+                <% for(let i = 0; i < data.length; i++){%>
+                <option value="<%=data[i].vorname%>"><%=data[i].vorname%> <%=data[i].nachname%></option>
+                <%}%>
               </select>
             </div>
             <div class="form-group"><!-- messagebox -->
@@ -72,5 +71,6 @@
   <script src="/stylesheets/bootstrap/js/dist/modal.js"></script>
   <script src="/stylesheets/bootstrap/js/dist/util.js"></script>
   <script src="/javascripts/my.js"></script>
+  <script src="/javascripts/admin.js"></script>
 </body>
 </html>
