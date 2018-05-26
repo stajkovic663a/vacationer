@@ -1,4 +1,4 @@
-const { query, nonQuery } = require("./../config/postgresql-common");
+const { query, nonQuery } = require("../config/postgresql-common");
 
 
 async function getAll() {
